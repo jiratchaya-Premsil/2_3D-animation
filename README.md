@@ -20,10 +20,10 @@ float sway = sin(time + pos.x * 0.5f + pos.z * 0.5f) * 0.4f;
 
 ## make the cube bend when closer to the camera
 
-float t = glm::clamp(
-    1.0f - (dist - nearDist) / (farDist - nearDist),
-    0.0f, 1.0f
-);
+
+float t = glm::clamp( 1.0f - (dist - nearDist) / (farDist - nearDist),0.0f, 1.0f);
+
+
 glm::vec3 finalAxis = glm::normalize( glm::mix(windAxis, bendAxis, t*2.0f));
 
 
